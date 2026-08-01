@@ -1,38 +1,39 @@
-# 今天吃什么 H5
+# 今天吃什么 · GitHub Pages 部署包
 
-这是一个不需要安装依赖的手机端 H5 小应用。直接打开 `index.html` 就能体验。
+这是可直接部署到 GitHub Pages 的静态网页项目。
 
-## 页面结构
+## 文件结构
 
-- `index.html`：页面内容和三页结构
-- `styles.css`：视觉样式，包含白底小程序风格、食物贴纸、结果卡片、历史列表
-- `app.js`：抽选逻辑、历史记录、本地保存、避免近期重复
-
-## 已包含功能
-
-- 首页：选择吃饭心情，点击“帮我选”
-- 结果页：展示抽中的食物、推荐文案、日期
-- 历史入口：结果页点击“历史记录”进入历史页
-- 历史页：展示每次抽选记录
-- 避免重复：近期抽中过的食物会先从候选池排除
-- 重置：历史页点击“清空”
-- 本地保存：历史记录保存在当前手机浏览器里
-
-## 修改食物
-
-打开 `app.js`，找到 `DEFAULT_FOODS`：
-
-```js
-{ id: 1, name: "烤肉", category: "重点好的", line: "吃好点，是你对自己的基本尊重", color: "#f7b267", emoji: "🍖" }
+```text
+index.html
+styles.css
+app.js
+assets/
+  images/
+    Frame17.png
+    carousel/
+      cupcake.png
+      pie.png
+      strawberry.png
+      chicken.png
+      blueberry.png
+      peach.png
+  svg/
+    Frame_14_restored.svg
+    Group_10.svg
+    download.svg
+    download-1.svg
 ```
 
-可以改这些字段：
+## GitHub Pages 部署
 
-- `name`：食物名称
-- `line`：结果页文案
-- `color`：食物圆盘颜色
-- `emoji`：食物图案
+1. 将本目录中的全部文件和文件夹上传到 GitHub 仓库根目录。
+2. 不要只上传 `index.html`，必须同时保留 `assets` 目录及其层级。
+3. 在仓库 **Settings → Pages** 中选择从默认分支的根目录部署。
+4. 等待部署完成后访问仓库对应的 `github.io` 地址。
 
-## 上线方式
+所有资源均使用相对路径，适用于项目型 GitHub Pages 地址，例如：
 
-把整个 `today-eat-app` 文件夹上传到任意静态网页托管平台即可，例如 Netlify、Vercel、Cloudflare Pages，或者学校/公司自己的静态服务器。
+`https://用户名.github.io/仓库名/`
+
+文件名区分大小写，请不要单独改名。
